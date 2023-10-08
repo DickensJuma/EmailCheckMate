@@ -1,0 +1,43 @@
+{
+  "name": "emailcheckmate",
+  "version": "1.0.0",
+  "description": "emailable ",
+  "main": "index.js",
+  "exports": {
+    ".": {
+      "require": "./email-validator-sdk.js"
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "email",
+    "validator",
+    "valid",
+    "emailable"
+  ],
+  "author": "DICKENS JUMA",
+  "license": "MIT",
+  "dependencies": {
+    "@devmehq/email-validator-js": "^1.0.16",
+    "axios": "^1.5.1",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "deep-email-validator": "^0.1.21",
+    "dns": "^0.2.2",
+    "domain-info-fetcher": "^1.2.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.6.0",
+    "stripe": "^13.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

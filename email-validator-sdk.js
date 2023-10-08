@@ -21,6 +21,7 @@ class EmailValidatorSDK {
       const disposableCheckResult = await this.checkDisposableEmail(email);
       //console.log("DISPOSABLE CHECK",disposableCheckResult);
       const domain = email.split('@')[1];
+      console.log("DOMAIN",domain);
       const mxRecords = await this.resolveMxRecords(domain);
      // console.log("MX RECORDS",mxRecords);
 
@@ -29,7 +30,9 @@ class EmailValidatorSDK {
     console.log("VALID EMAIL",validEmail);
          
     // Validate the free email provider
-    const freeEmailProvider = free_email_provider_domains.find((domain) => email.endsWith(domain));
+    const freeEmailProvider = free_email_provider_domains.some((domain) => { 
+        return email.includes(domain);
+    });
     console.log("FREE EMAIL PROVIDER",freeEmailProvider);
     let is_free_domain = false;
     if(freeEmailProvider){
@@ -79,10 +82,10 @@ class EmailValidatorSDK {
         qualityScore -= 0.4;
       }
 
-        if (freeEmailProvider) {
-        console.log("FREE EMAIL PROVIDER 3",freeEmailProvider);
-        qualityScore -= 0.2;
-        }
+        // if (freeEmailProvider) {
+        // console.log("FREE EMAIL PROVIDER 3",freeEmailProvider);
+        // qualityScore -= 0.2;
+        // }
 
 
    
